@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Machine Perception – Spring Semester 2025</title>
+	<link rel="shortcut icon" href="favicon.html">
+	<link rel="stylesheet" type="text/css" href="data/gvv.css">
+	<link rel="stylesheet" type="text/css" href="data/seminar.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		function togglePapers(o) {
+			$(o).parents('table.topics tr').find('.paper').toggle();
+		}
+
+		function showAllPapers() {
+			$('div.paper').show();
+			$('div.container').show();
+			$('div.comparison').show();
+			$('a.showpapers').hide();
+			$('a.hidepapers').show();
+		}
+
+		function hideAllPapers() {
+			$('div.paper').hide();
+			$('div.container').hide();
+			$('div.comparison').hide();
+			$('a.showpapers').show();
+			$('a.hidepapers').hide();
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const today = new Date();
+
+			document.querySelectorAll('.topics tr').forEach((row, index) => {
+				if (index === 0) return;
+
+				const dateCell = row.querySelector('.date i');
+				if (dateCell) {
+					try {
+						const cellDate = new Date(`2025 ${dateCell.textContent.trim()}`);
+						if (isNaN(cellDate)) throw new Error('Invalid date');
+
+						if (cellDate > today) {
+							row.style.backgroundColor = '#d3d3d3';
+							row.style.pointerEvents = 'none';
+							row.style.opacity = '0.5';
+						}
+					} catch (error) {
+						console.error(`Error processing date: ${dateCell.textContent}`, error);
+					}
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<div style="text-align: center">
+			<a href="https://www.upenn.edu/"><img src="data/full_penn_logo.png" alt="Logos of UPenn" width="400"></a>
+		</div>
+
+		<h1 style="text-align: center;">Machine Perception</h1>
+		<h2 style="text-align: center;">Spring Semester 2025</h2>
+		<hr>
+
+		<hr>
+		<h2 style="text-align: center;">
+			<a href="index.html">Home</a> &nbsp;|&nbsp;
+			<b>Slides</b> &nbsp;|&nbsp;
+
+			<a href="format.html">Format</a> &nbsp;|&nbsp;
+			<a href="resource.html">Resources</a>
+		</h2>
+		<hr>
+		<h2><a name="topics">Topics</a></h2>
+		<hr>
+
+		<br>
+		<table class="topics" border="1">
+			<tr>
+				<th>Paper Presenting Schedule</th>
+				<th width="160">Presentation</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Projection Model</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_1.pdf">Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 15</i></a></div>
+				</td>
+			</tr>
+			<tr style="background-color: #d3d3d3; pointer-events: none; opacity: 0.5;">
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Holiday</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_2.pdf">No Class</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 20</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Projective Transformations</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_2.pdf">
+								Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 22</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Jan 27</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 27</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Jan 29</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 29</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 03</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 03</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 05</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 05</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 10</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 10</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 12</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 12</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 17</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 17</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 19</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 19</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 24</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 24</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Feb 26</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 26</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 03</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 03</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 05</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 05</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 10</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 10</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 12</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 12</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 17</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 17</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 19</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 19</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 24</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 24</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 26</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 26</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Mar 31</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 31</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 02</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 02</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 07</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 07</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 09</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 09</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 14</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 14</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 16</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 16</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 21</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 21</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 23</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 23</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 28</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 28</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for Apr 30</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 30</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for May 05</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>May 05</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for May 07</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>May 07</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for May 12</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>May 12</i></a></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="footer">
+		The website template and its content refer directly to <a
+			href="https://vcai.mpi-inf.mpg.de/teaching/vcai_seminar_2023/index.html">MPII summer seminar</a> <br>
+	</div>
+
+</body>
+
+</html>

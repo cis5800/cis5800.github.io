@@ -19,3 +19,33 @@ a:visited { color: rgb(39, 82, 178); }
 a:hover{color:rgb(53, 0, 0);}
 #Content { margin-left: auto; margin-right: auto; padding: 20px; width: 660px }
 
+
+
+#ta-section {
+    margin-top: 0px;
+}
+
+#ta-section table {
+    width: 100%;
+    table-layout: fixed; /* Ensures equal column width */
+}
+
+#ta-section td {
+    vertical-align: top;
+    padding: 0px;
+    width: 50%; /* Ensures equal column width */
+}
+
+.ta {
+    text-align: left;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: stretch;
+}
+
+.ta-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
